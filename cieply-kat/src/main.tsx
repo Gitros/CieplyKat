@@ -8,7 +8,7 @@ import About from "./pages/About.tsx";
 import Realizations from "./pages/Realizations.tsx";
 import Contact from "./pages/Contact.tsx";
 import Opinions from "./pages/Opinions.tsx";
-import Faq from "./pages/FAQ.tsx";
+import Faq from "./pages/Faq.tsx";
 import Services from "./pages/Services.tsx";
 
 const router = createBrowserRouter([

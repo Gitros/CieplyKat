@@ -1,14 +1,18 @@
-import { Link } from "react-router-dom"
-import image from "../images/banner.png"
+import { Link } from "react-router-dom";
+import image from "../images/banner.png";
 
 const Home = () => {
   return (
     <div className="flex items-center justify-center px-4 h-[calc(100vh-60px)]">
-       <div className="max-w-4xl w-full text-center animate-fade-in-up">
+      <div className="max-w-4xl w-full text-center animate-fade-in-up">
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
           Witamy w <span className="text-orange-400">Ciepłym Kącie</span>
         </h1>
-        <img src={image} alt="baner" className="mx-auto mb-6 w-[200px] max-w-md" />
+        <img
+          src={image}
+          alt="baner"
+          className="mx-auto mb-6 w-[200px] max-w-md"
+        />
 
         <p className="text-gray-600 text-lg md:text-xl mb-8">
           Ocieplanie domu w zasięgu twojej ręki!
@@ -22,7 +26,7 @@ const Home = () => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

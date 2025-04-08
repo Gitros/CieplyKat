@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import ocieplanieImg from "../images/ocieplanieImg.jpg";
 import elewacjeImg from "../images/elewacjeIMG.jpg";
 import poddaszeImg from "../images/poddaszeImg.jpg";
@@ -35,11 +37,15 @@ const Services = () => {
     <section className="px-4 py-12">
       <div className="max-w-6xl mx-auto space-y-16">
         {services.map((service, index) => (
-          <div
+          <motion.div
             key={service.id}
             className={`flex flex-col ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             } items-center gap-8`}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <div className="flex-1">
               <h2 className="text-3xl font-bold text-orange-500 mb-2">
@@ -60,13 +66,15 @@ const Services = () => {
             </div>
 
             <div className="flex-1">
-              <img
+              <motion.img
                 src={service.image}
                 alt={service.title}
                 className="w-full rounded-lg shadow-lg object-cover"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
               />
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

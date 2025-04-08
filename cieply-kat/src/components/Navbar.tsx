@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -63,52 +64,71 @@ const Navbar = () => {
         </button>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden absolute top-[60px] left-0 w-full z-50 px-4 pb-4 space-y-2 bg-white border-b shadow">
-          <Link
-            to="/services"
-            className="block text-gray-700 hover:text-blue-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Usługi
-          </Link>
-          <Link
-            to="/about"
-            className="block text-gray-700 hover:text-blue-500"
-            onClick={() => setIsOpen(false)}
-          >
-            O nas
-          </Link>
-          <Link
-            to="/realizations"
-            className="block text-gray-700 hover:text-blue-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Realizacje
-          </Link>
-          <Link
-            to="/contact"
-            className="block text-gray-700 hover:text-blue-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Kontakt
-          </Link>
-          <Link
-            to="/opinions"
-            className="block text-gray-700 hover:text-blue-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Opinie
-          </Link>
-          <Link
-            to="/faq"
-            className="block text-gray-700 hover:text-blue-500"
-            onClick={() => setIsOpen(false)}
-          >
-            FAQ
-          </Link>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              className="fixed inset-0 z-20"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setIsOpen(false)}
+            />
+
+            <motion.div
+              className="md:hidden absolute top-[60px] left-0 w-full z-50 bg-white px-4 pt-2 space-y-2 shadow-md border-b rounded-b-md overflow-hidden"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <Link
+                to="/services"
+                onClick={() => setIsOpen(false)}
+                className="block text-gray-700 hover:text-blue-500"
+              >
+                Usługi
+              </Link>
+              <Link
+                to="/about"
+                onClick={() => setIsOpen(false)}
+                className="block text-gray-700 hover:text-blue-500"
+              >
+                O nas
+              </Link>
+              <Link
+                to="/realizations"
+                onClick={() => setIsOpen(false)}
+                className="block text-gray-700 hover:text-blue-500"
+              >
+                Realizacje
+              </Link>
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="block text-gray-700 hover:text-blue-500"
+              >
+                Kontakt
+              </Link>
+              <Link
+                to="/opinions"
+                onClick={() => setIsOpen(false)}
+                className="block text-gray-700 hover:text-blue-500"
+              >
+                Opinie
+              </Link>
+              <Link
+                to="/faq"
+                onClick={() => setIsOpen(false)}
+                className="block text-gray-700 hover:text-blue-500"
+              >
+                FAQ
+              </Link>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

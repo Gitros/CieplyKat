@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import ocieplenie1 from "../images/ocieplenie1.jpg";
 import ocieplenie2 from "../images/ocieplenie2.jpg";
 import ocieplenie3 from "../images/ocieplenie3.jpg";
@@ -28,10 +30,12 @@ const Realizations = () => {
               key={project.id}
               className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition group bg-white"
             >
-              <img
+              <motion.img
                 src={project.img}
                 alt={project.title}
-                className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-60 object-cover"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               />
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-gray-700">
