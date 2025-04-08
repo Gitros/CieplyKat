@@ -11,16 +11,16 @@ const Navbar = () => {
 <nav className="bg-white border-b shadow-md h-[60px]">
       <div className="max-w-7xl h-full mx-auto px-4 py-3 flex justify-between items-center">
         <div className="text-xl font-bold text-gray-800">
-          <Link to="/">Ciepły Kąt</Link>
+          <Link to="/" className="text-gray-700 hover:text-blue-500 transition" >Ciepły Kąt</Link>
         </div>
 
         <div className="hidden md:flex space-x-4">
-          <Link to="/" className="text-gray-700 hover:text-blue-500 transition">Usługi</Link>
+          <Link to="/realizations" className="text-gray-700 hover:text-blue-500 transition">Usługi</Link>
           <Link to="/about" className="text-gray-700 hover:text-blue-500 transition">O nas</Link>
-          <Link to="/contact" className="text-gray-700 hover:text-blue-500 transition">Realizacje</Link>
-          <Link to="/" className="text-gray-700 hover:text-blue-500 transition">Kontakt</Link>
-          <Link to="/about" className="text-gray-700 hover:text-blue-500 transition">Opinie</Link>
-          <Link to="/contact" className="text-gray-700 hover:text-blue-500 transition">FAQ</Link>
+          <Link to="/realizations" className="text-gray-700 hover:text-blue-500 transition">Realizacje</Link>
+          <Link to="/contact" className="text-gray-700 hover:text-blue-500 transition">Kontakt</Link>
+          <Link to="/opinions" className="text-gray-700 hover:text-blue-500 transition">Opinie</Link>
+          <Link to="/faq" className="text-gray-700 hover:text-blue-500 transition">FAQ</Link>
         </div>
 
         <button className="md:hidden bg-gray-600 hover:bg-gray-700 rounded-md" onClick={toggleMenu}>
